@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automated Sender</title>
+    <title>API Dispatcher</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -220,10 +220,10 @@
     <div class="glass-card">
         <div class="header">
             <div class="icon-badge">
-                <i class="fa-solid fa-bolt"></i>
+                <i class="fa-solid fa-paper-plane"></i>
             </div>
-            <h1>Automated Sender</h1>
-            <p>Direct API Dispatch Console</p>
+            <h1>API Dispatcher</h1>
+            <p>Direct HTTP Client Console</p>
         </div>
 
         <div class="input-group">
@@ -243,8 +243,8 @@
         </div>
 
         <button onclick="handleExecution()" id="actionBtn">
-            <span id="btnText">Launch Request</span>
-            <i class="fa-solid fa-paper-plane" id="btnIcon"></i>
+            <span id="btnText">Send Request</span>
+            <i class="fa-solid fa-arrow-right" id="btnIcon"></i>
         </button>
 
         <div id="statusAlert" class="status-box"></div>
@@ -254,7 +254,6 @@
         async function handleExecution() {
             const phone = document.getElementById('phone').value.trim();
             const amount = document.getElementById('amount').value.trim();
-            const statusAlert = document.getElementById('statusAlert');
             const actionBtn = document.getElementById('actionBtn');
             const btnText = document.getElementById('btnText');
             const btnIcon = document.getElementById('btnIcon');
@@ -290,8 +289,8 @@
                 showStatus('success', '<i class="fa-solid fa-circle-check"></i> Request Dispatched!');
             } finally {
                 actionBtn.disabled = false;
-                btnText.innerText = 'Launch Request';
-                btnIcon.className = 'fa-solid fa-paper-plane';
+                btnText.innerText = 'Send Request';
+                btnIcon.className = 'fa-solid fa-arrow-right';
             }
         }
 
