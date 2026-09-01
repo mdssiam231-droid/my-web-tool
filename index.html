@@ -24,42 +24,34 @@
             padding: 20px;
         }
 
-        .glow {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(90px);
-            z-index: 1;
-            opacity: 0.5;
+        /* Background Video Styling */
+        #bg-video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            filter: brightness(0.35) contrast(1.1); /* ভিডিও ডার্ক রাখার জন্য */
         }
 
-        .glow-1 {
-            width: 300px;
-            height: 300px;
-            background: #2563eb;
-            top: 10%;
-            left: 15%;
-        }
-
-        .glow-2 {
-            width: 300px;
-            height: 300px;
-            background: #7c3aed;
-            bottom: 10%;
-            right: 15%;
-        }
-
+        /* Glassmorphism Card */
         .glass-card {
             position: relative;
             z-index: 10;
             background: rgba(15, 23, 42, 0.75);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 20px;
             padding: 35px 30px;
             width: 100%;
             max-width: 380px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
         }
 
         .header {
@@ -70,8 +62,8 @@
         .icon-badge {
             width: 50px;
             height: 50px;
-            background: rgba(59, 130, 246, 0.15);
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
             border-radius: 14px;
             display: inline-flex;
             align-items: center;
@@ -214,8 +206,10 @@
 </head>
 <body>
 
-    <div class="glow glow-1"></div>
-    <div class="glow glow-2"></div>
+    <!-- ব্যাকগ্রাউন্ড ভিডিও ট্যাগ (অটো লুপ ও মিউট করা) -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="bg.mp4" type="video/mp4">
+    </video>
 
     <div class="glass-card">
         <div class="header">
